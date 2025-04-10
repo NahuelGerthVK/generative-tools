@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Generative Tool</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <!-- p5.js -->
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+
+    <!-- video export -->
+    <script src="export-video.js"></script>
+  </head>
+
+  <body>
+    <!-- interface -->
+    <div id="interface">
+      <!-- title -->
+      <h1>Generative Tool</h1>
+
+      <!-- 1: canvas settings -->
+      <div class="ui-group">
+        <h2><span class="number">1</span> Canvas</h2>
+
+        <!-- slider: canvas width -->
+        <div class="ui-element">
+          <label for="canvas-width-slider">Width</label>
+          <input
+            id="canvas-width-slider"
+            type="range"
+            min="20"
+            max="1920"
+            value="500"
+            step="1"
+          />
+        </div>
+
+        <!-- slider: canvas height -->
+        <div class="ui-element">
+          <label for="canvas-height-slider">Height</label>
+          <input
+            id="canvas-height-slider"
+            type="range"
+            min="20"
+            max="1920"
+            value="500"
+            step="1"
+          />
+        </div>
+
+        <!-- slider: canvas zoom -->
+        <div class="ui-element">
+          <label for="canvas-zoom-slider">Zoom</label>
+          <input
+            id="canvas-zoom-slider"
+            type="range"
+            min="0.1"
+            max="2.0"
+            value="1"
+            step="0.01"
+          />
+        </div>
+      </div>
+
+      <!-- 2: sketch settings -->
+      <div class="ui-group">
+        <h2><span class="number">2</span> Sketch</h2>
+
+        <!-- slider: size -->
+        <div class="ui-element">
+          <label for="size-slider">Size</label>
+          <input
+            id="size-slider"
+            type="range"
+            min="10"
+            max="600"
+            value="200"
+            step="1"
+          />
+        </div>
+
+        <!-- slider: outline -->
+        <div class="ui-element">
+          <label for="outline-slider">Outline</label>
+          <input
+            id="outline-slider"
+            type="range"
+            min="0"
+            max="30"
+            value="0"
+            step="1"
+          />
+        </div>
+      </div>
+
+      <!-- color select -->
+      <div class="ui-group">
+        <!-- select: color -->
+        <div class="ui-element select">
+          <label for="color-select">Background</label>
+          <select id="color-select">
+            <option value="#000" selected>Black</option>
+            <option value="#ffffff">White</option>
+            <option value="#0000ff">Blue</option>
+            <option value="#ffff00">Yellow</option>
+            <option value="#ff0000">Red</option>
+          </select>
+          <img class="select-icon" src="arrow-down.svg" />
+        </div>
+      </div>
+
+      <!-- buttons -->
+      <div class="ui-group">
+        <!-- button: random bg -->
+        <div class="ui-element">
+          <button id="random-bg-button" onclick="randomColor()">
+            Random fill
+          </button>
+        </div>
+      </div>
+
+      <!-- text -->
+      <div class="ui-group">
+        <div class="ui-element text">
+          <label for="textinput">Text</label>
+          <textarea style="resize: none" rows="4" type="text" id="textinput">
+Hello World</textarea
+          >
+        </div>
+      </div>
+
+      <!-- 3: export -->
+      <div class="ui-group">
+        <h2><span class="number">3</span> Export</h2>
+
+        <!-- button: export image -->
+        <div class="ui-element">
+          <label for="export-image-button">JPG</label>
+          <button id="export-image-button" onclick="exportImage()">Save</button>
+        </div>
+
+        <!-- button: record video -->
+        <div class="ui-element">
+          <label for="export-video-button">Record video</label>
+          <div class="video-button-wrapper">
+            <button
+              id="start-video-button"
+              class="visible"
+              onclick="startRecording()"
+            >
+              &#9658; Start
+            </button>
+            <button
+              id="stop-video-button"
+              class="stop"
+              onclick="stopRecording()"
+            >
+              &#10074;&#10074; Stop
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- credits -->
+      <div class="credits">
+        <span>☻ <a href="www.nahuelgerth.de">Nahuel Gerth</a></span>
+      </div>
+    </div>
+
+    <!-- sketch -->
+    <div id="sketch">
+      <!-- sketch will appear here! -->
+      <div id="canvas"></div>
+
+      <!-- canvas info box -->
+      <div class="canvas-info">
+        <div>Size: <span id="canvas-size"></span></div>
+        <div>Zoom: <span id="canvas-zoom"></span></div>
+      </div>
+    </div>
+
+    <!-- load our sketch.js -->
+    <script src="sketch.js"></script>
+  </body>
+</html>

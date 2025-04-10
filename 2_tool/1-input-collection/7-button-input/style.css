@@ -1,0 +1,75 @@
+/* reset our CSS */
+body,
+html {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* page layout */
+
+body {
+  display: grid;
+  background: #aaaaaa;
+  grid-template-columns: 300px 1fr;
+  overflow: hidden;
+}
+
+#interface {
+  background: #333;
+  color: #fff;
+  height: 100vh;
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#sketch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* ui styling */
+input {
+  width: 100%;
+}
+
+.ui-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.ui-element {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* button styling */
+button {
+  font-family: sans-serif;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease-out,
+    color 0.15s ease-out,
+    opacity 0.15s ease-out;
+}
+
+button:hover {
+  background-color: blue;
+  color: #fff;
+}

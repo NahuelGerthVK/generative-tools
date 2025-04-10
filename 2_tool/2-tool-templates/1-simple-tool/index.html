@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sketch</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <!-- p5.js -->
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+
+    <!-- video export -->
+    <script src="export-video.js"></script>
+  </head>
+
+  <body>
+    <!-- interface -->
+    <div id="interface">
+      <!-- title -->
+      <h1>Generative Tool</h1>
+
+      <!-- sliders -->
+      <div class="ui-group">
+        <h2>Sketch</h2>
+
+        <!-- slider: size -->
+        <div class="ui-element">
+          <label for="size-slider">Size</label>
+          <input
+            id="size-slider"
+            type="range"
+            min="10"
+            max="600"
+            value="200"
+            step="1"
+          />
+        </div>
+
+        <!-- slider: outline -->
+        <div class="ui-element">
+          <label for="outline-slider">Outline</label>
+          <input
+            id="outline-slider"
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            step="1"
+          />
+        </div>
+      </div>
+
+      <!-- text -->
+      <div class="ui-group">
+        <div class="ui-element text">
+          <label for="textinput">Text</label>
+          <textarea style="resize: none" rows="4" type="text" id="textinput">
+Hello World</textarea
+          >
+        </div>
+      </div>
+
+      <!-- export -->
+      <div class="ui-group">
+        <h2>Export</h2>
+
+        <!-- button: export image -->
+        <div class="ui-element">
+          <label for="export-image-button">JPG</label>
+          <button id="export-image-button" onclick="exportImage()">Save</button>
+        </div>
+
+        <!-- button: record video -->
+        <div class="ui-element">
+          <label for="export-video-button">Record video</label>
+          <div class="video-button-wrapper">
+            <button
+              id="start-video-button"
+              class="visible"
+              onclick="startRecording()"
+            >
+              &#9658; Start
+            </button>
+            <button
+              id="stop-video-button"
+              class="stop"
+              onclick="stopRecording()"
+            >
+              &#10074;&#10074; Stop
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- sketch -->
+    <div id="sketch">
+      <!-- sketch will appear here! -->
+      <div id="canvas"></div>
+    </div>
+
+    <!-- load our sketch.js -->
+    <script src="sketch.js"></script>
+  </body>
+</html>

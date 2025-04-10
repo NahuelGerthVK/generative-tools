@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Generative Tool</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <!-- p5.js -->
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+
+    <!-- video export -->
+    <script src="export-video.js"></script>
+  </head>
+
+  <body>
+    <!-- interface -->
+    <div id="interface">
+      <!-- title -->
+      <h1>Generative Tool</h1>
+
+      <div class="ui-group">
+        <!-- button: record video -->
+        <div class="ui-element">
+          <label for="export-video-button">Record video</label>
+          <div class="video-button-wrapper">
+            <button
+              id="start-video-button"
+              class="visible"
+              onclick="startRecording()"
+            >
+              &#9658; Start
+            </button>
+            <button
+              id="stop-video-button"
+              class="stop"
+              onclick="stopRecording()"
+            >
+              &#10074;&#10074; Stop
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- sketch -->
+    <div id="sketch">
+      <!-- sketch will appear here! -->
+      <div id="canvas"></div>
+    </div>
+
+    <!-- load our sketch.js -->
+    <script src="sketch.js"></script>
+  </body>
+</html>

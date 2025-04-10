@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Generative Tool</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+  </head>
+
+  <body>
+    <!-- interface -->
+    <div id="interface">
+      <!-- title -->
+      <h1>Generative Tool</h1>
+
+      <div class="ui-group">
+        <!-- button: export image -->
+        <div class="ui-element">
+          <label for="export-image-button">JPG</label>
+          <button id="export-image-button" onclick="exportImage()">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- sketch -->
+    <div id="sketch">
+      <!-- sketch will appear here! -->
+      <div id="canvas"></div>
+    </div>
+
+    <!-- load our sketch.js -->
+    <script src="sketch.js"></script>
+  </body>
+</html>
